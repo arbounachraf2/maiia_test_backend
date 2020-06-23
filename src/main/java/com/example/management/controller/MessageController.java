@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 /**
  * Created by Aarboun on 19/06/2020.
  */
@@ -35,6 +37,13 @@ public class MessageController {
         }
     }
 
-
+    /**
+     * get All Messages
+     * @return {@link java.util.ArrayList}
+     */
+    @GetMapping("/message")
+    public List<Message> getAllMessages()  {
+        return messageService.getAllMessages();
+    }
 
 }
